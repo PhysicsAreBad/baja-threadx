@@ -1,6 +1,7 @@
 #include "main.h"
 #include "board.h"
 #include "tx_api.h"
+#include "adc_sensor.h"
 
 static void SystemClock_Config(void);
 static void GPIO_Init(void);
@@ -18,6 +19,7 @@ int main(void)
     }
 
     GPIO_Init();
+    ADC_Sensor_Init();
 
     /* Never returns. Calls tx_application_define() (app_threadx.c), then starts the scheduler. */
     tx_kernel_enter();

@@ -21,4 +21,10 @@
 #define LED_RED_PIN             GPIO_PIN_4
 #define LED_RED_CLK_ENABLE()    __HAL_RCC_GPIOG_CLK_ENABLE()
 
+/* Analog input: PA6 = ADC1_IN11 (Arduino A1 on the NUCLEO-H563ZI) */
+#define ADC_INPUT_PORT          GPIOA
+#define ADC_INPUT_PIN           GPIO_PIN_6
+#define ADC_INPUT_CLK_ENABLE()  __HAL_RCC_GPIOA_CLK_ENABLE()
+#define ADC_INPUT_CHANNEL       ADC_CHANNEL_11
+
 #endif /* BOARD_H */

@@ -4,7 +4,7 @@ if(NOT CMAKE_TOOLCHAIN_FILE)
     set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/arm-none-eabi.cmake)
 endif()
 
-project(stm32h563_threadx C ASM)
+project(stm32h563_adc_walkthrough C ASM)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -15,7 +15,7 @@ endif()
 
 set(THIRD_PARTY ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
 if(NOT EXISTS ${THIRD_PARTY}/threadx/common/src/tx_thread_create.c)
-    message(FATAL_ERROR "Submodules missing. Run: git submodule update --init --recursive")
+    message(FATAL_ERROR "Submodules missing. Submodules missing. Run: git submodule update --init --recursive")
 endif()
 
 # ---------------------------------------------------------------------------
@@ -88,6 +88,7 @@ add_executable(${PROJECT_NAME}
     Core/Src/system_stm32h5xx.c
     Core/Src/main.c
     Core/Src/app_threadx.c
+    Core/Src/adc_sensor.c
     Core/Src/stm32h5xx_it.c
     Core/Src/stm32h5xx_hal_timebase_tim.c
     Core/Src/syscalls.c

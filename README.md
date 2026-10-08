@@ -1,4 +1,7 @@
-# STM32H563 + ThreadX base project
+# STM32H563 + ThreadX: reading an analog input (walkthrough)
+
+Copy of the base project with an ADC example added. **Start with [WALKTHROUGH.md](WALKTHROUGH.md).**
+The rest of this file is the original base-project README.
 
 A bare CMake project for the STM32H563 running Eclipse ThreadX with the ST HAL.
 The pin defaults match the NUCLEO-H563ZI.
@@ -6,7 +9,6 @@ The pin defaults match the NUCLEO-H563ZI.
 ## Build
 
 ```sh
-git submodule update --init            # first clone only
 cmake -S . -B build                    # Debug by default; add -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
 ```
